@@ -1,0 +1,41 @@
+diff --git a/chrome/browser/ui/startup/bad_flags_prompt.cc b/chrome/browser/ui/startup/bad_flags_prompt.cc
+index de0b34c..0e93576 100644
+--- a/chrome/browser/ui/startup/bad_flags_prompt.cc
++++ b/chrome/browser/ui/startup/bad_flags_prompt.cc
+@@ -141,7 +141,7 @@ void ShowBadFlagsPrompt(Browser* browser) {
+ 
+   for (const char* flag : kBadFlags) {
+     if (base::CommandLine::ForCurrentProcess()->HasSwitch(flag)) {
+-      ShowBadFlagsInfoBar(web_contents, IDS_BAD_FLAGS_WARNING_MESSAGE, flag);
++      /*ShowBadFlagsInfoBar(web_contents, IDS_BAD_FLAGS_WARNING_MESSAGE, flag);*/
+       return;
+     }
+   }
+diff --git a/content/common/sandbox_linux/sandbox_linux.cc b/content/common/sandbox_linux/sandbox_linux.cc
+index a6be233..2836dce 100644
+--- a/content/common/sandbox_linux/sandbox_linux.cc
++++ b/content/common/sandbox_linux/sandbox_linux.cc
+@@ -343,7 +343,7 @@ bool LinuxSandbox::InitializeSandboxImpl() {
+     if (sandbox_failure_fatal)
+       LOG(FATAL) << error_message;
+ 
+-    LOG(ERROR) << error_message;
++    /*LOG(ERROR) << error_message;*/
+     return false;
+   }
+ 
+diff --git a/dbus/bus.cc b/dbus/bus.cc
+index a3139e4..b6048b3 100644
+--- a/dbus/bus.cc
++++ b/dbus/bus.cc
+@@ -392,8 +392,10 @@ bool Bus::Connect() {
+     }
+   }
+   if (!connection_) {
++/*
+     LOG(ERROR) << "Failed to connect to the bus: "
+                << (error.is_set() ? error.message() : "");
++*/
+     return false;
+   }
+ 
