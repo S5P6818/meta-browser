@@ -76,7 +76,7 @@ PACKAGECONFIG[jumbo-build] = ""
 PACKAGECONFIG[kiosk-mode] = ""
 PACKAGECONFIG[proprietary-codecs] = ' \
         ffmpeg_branding="Chrome" proprietary_codecs=true, \
-        ffmpeg_branding="Chromium" proprietary_codecs=false \
+        ffmpeg_branding="Chrome" proprietary_codecs=true \
 '
 
 # Base GN arguments, mostly related to features we want to enable or disable.
